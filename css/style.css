@@ -1,0 +1,30 @@
+td {
+    width: 25px!important;
+    height: 25px!important;
+    padding: 0!important;
+    margin: 0!important;
+}
+
+td:hover {}
+
+table {
+    border-collapse: collapse;
+}
+
+.wall {
+    background-color: brown;
+}
+
+.startingpoint {
+    background-image: url("start.png");
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.endpoint {
+    background-image: url("endpoint.png");
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
