@@ -16,14 +16,14 @@ table {
 }
 
 .startingpoint {
-    background-image: url("start.png");
+    background-image: url("../start.png");
     background-size: 90%;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 .endpoint {
-    background-image: url("endpoint.png");
+    background-image: url("../endpoint.png");
     background-size: 90%;
     background-repeat: no-repeat;
     background-position: center;
