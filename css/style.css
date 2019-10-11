@@ -3,7 +3,7 @@ td {
     height: 25px!important;
     padding: 0!important;
     margin: 0!important;
-    border: 1px solid rgb(226, 226, 226);
+    border: 0.5px solid rgb(226, 226, 226);
 }
 
 table {
@@ -11,6 +11,7 @@ table {
 }
 
 .wall {
+    border: 0.5px solid rgb(12, 53, 71);
     animation-name: wallAnimation;
     animation-duration: 0.3s;
     animation-timing-function: ease-out;
