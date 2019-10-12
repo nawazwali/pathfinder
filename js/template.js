@@ -120,4 +120,8 @@ $(document).ready(function() {
       e.preventDefault()
     }
   })
+
+  $('#ClearWalls').click(function() {
+    $('.wall').removeClass('wall')
+  })
 })

@@ -1,8 +1,8 @@
 td {
-    width: 25px!important;
-    height: 25px!important;
-    padding: 0!important;
-    margin: 0!important;
+    width: 25px !important;
+    height: 25px !important;
+    padding: 0 !important;
+    margin: 0 !important;
     border: 0.5px solid rgb(226, 226, 226);
 }
 
@@ -27,10 +27,12 @@ table {
         transform: scale(.3);
         background-color: rgb(12, 53, 71);
     }
+
     50% {
         transform: scale(1.2);
         background-color: rgb(12, 53, 71);
     }
+
     100% {
         transform: scale(1.0);
         background-color: rgb(12, 53, 71);
@@ -49,4 +51,41 @@ table {
     background-size: 90%;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+.visitedTargetNodePurple {
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    animation-name: visitedStartNodePurpleAnimation;
+    animation-duration: 2.0s;
+    animation-timing-function: ease-out;
+    animation-delay: 0;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+
+@keyframes visitedStartNodePurpleAnimation {
+    0% {
+        transform: scale(.3);
+        background-color: rgba(41, 4, 24, 0.75);
+        border-radius: 100%;
+    }
+
+    50% {
+        background-color: rgba(97, 0, 20, 0.75);
+    }
+
+    75% {
+        transform: scale(1.2);
+        background-color: rgba(216, 5, 141, 0.75)
+    }
+
+    100% {
+        transform: scale(1.0);
+        background-color: rgba(178, 67, 255, 0.75);
+    }
 }
