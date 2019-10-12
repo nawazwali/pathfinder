@@ -8,9 +8,68 @@
 	<title>Path Finding Algorithms</title>
 
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="./css/bootstrap.css">
+	<link href="./css/fontawesome.css" rel="stylesheet">
 </head>
 
 <body>
+	<nav>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="#">Path Finding</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<div class="btn-group">
+							<button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false">
+								Select Algorithm
+							</button>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="#">Diagkstark</a>
+								<a class="dropdown-item" href="#">A star</a>
+								<a class="dropdown-item" href="#">Another</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#">Some other</a>
+							</div>
+						</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Dropdown
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Something else here</a>
+						</div>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+					</li>
+				</ul>
+				<form class="form-inline my-2 my-lg-0">
+					<button type="button" class="btn btn-success mr-1">Start Animation</button>
+					<button type="button" class="btn btn-secondary mr-1">Clear Walls</button>
+
+					<button type="button" class="btn btn-secondary mr-1">Clear Path</button>
+					<button type="button" class="btn btn-secondary mr-1">Add</button>
+
+
+				</form>
+
+			</div>
+		</nav>
+	</nav>
 	<table border="1">
 		<tbody>
 
@@ -19,6 +78,8 @@
 	<script src="js/algorithms.js"></script>
 	<script type="text/javascript" src="jquery.min.js"></script>
 	<script type="text/javascript" src="./js/template.js"></script>
+	<script type="text/javascript" src="./js/bootstrap.bundle.js"></script>
+	<script type="text/javascript" src="./js/fontawesome.js"></script>
 
 
 </body>
