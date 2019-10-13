@@ -22,6 +22,10 @@ $(document).ready(function() {
     //console.log('this is X ' + x)
     ReachTopEdge()
     ReachRightEdge()
+    ReachDownEdge()
+    var [next_node, y, x] = IdGenerator(current_node, 'left')
+    $(next_node).addClass('visitedTargetNodePurple')
+    ReachTopEdge()
   }
 
   function IdGenerator(node, direction) {
@@ -85,6 +89,22 @@ $(document).ready(function() {
       animatePath(next_node, i)
     }
   }
+
+  function ReachDownEdge() {
+    var [next_node, y, x] = IdGenerator(current_node, 'no')
+    while (y < rows) {
+      var [next_node, y, x] = IdGenerator(current_node, 'down')
+      animatePath(next_node, i)
+    }
+  }
+
+  function ReachLeftEdge() {
+    var [next_node, y, x] = IdGenerator(current_node, 'no')
+    while (x < columns) {
+      var [next_node, y, x] = IdGenerator(current_node, 'left')
+      animatePath(next_node, i)
+    }
+  }
   function CheckforObstruction(next_node) {
     var haswall = $(next_node).hasClass('wall')
     var hasStart = $(next_node).hasClass('startingpoint')
@@ -93,17 +113,17 @@ $(document).ready(function() {
     if (haswall && hasStart && hasEnd) {
       obstruction = true
     }
-    if (haswall) return [true, 'wall']
-    if (hasStart) return [true, 'start']
+    if (haswall) return true
+    if (hasStart) return true
     if (hasEnd) {
       TargetNode = next_node
-      return [true, 'End']
+      return true
     }
     return false
   }
   function animatePath(next_node, i) {
     var obstruction = CheckforObstruction(next_node)
-    if (true) {
+    if (!obstruction) {
       $(next_node).addClass('visitedTargetNodePurple')
     }
   }
