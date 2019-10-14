@@ -13,19 +13,15 @@ $(document).ready(function() {
   var TargetNode = ''
   console.log(columns)
   $('#StartAlgorithm').click(function() {
-    DijkstraStart()
+    DepthFirstStart()
   })
 
-  function DijkstraStart() {
+  function DepthFirstStart() {
     //var id = '#' + i + '_' + j
     //$(id).addClass('visitedTargetNodePurple')
     //console.log('this is X ' + x)
     ReachTopEdge()
-    ReachRightEdge()
-    ReachDownEdge()
-    var [next_node, y, x] = IdGenerator(current_node, 'left')
-    $(next_node).addClass('visitedTargetNodePurple')
-    ReachTopEdge()
+
   }
 
   function IdGenerator(node, direction) {
