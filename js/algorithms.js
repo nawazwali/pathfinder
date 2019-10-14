@@ -13,15 +13,44 @@ $(document).ready(function() {
   var TargetNode = ''
   console.log(columns)
   $('#StartAlgorithm').click(function() {
-    DepthFirstStart()
+    DijkstraStart()
   })
 
-  function DepthFirstStart() {
+  function DijkstraStart() {
     //var id = '#' + i + '_' + j
     //$(id).addClass('visitedTargetNodePurple')
     //console.log('this is X ' + x)
+    //ReachTopEdge()
+    //ReachRightEdge()
+    //ReachDownEdge()
+    //var [next_node, y, x] = IdGenerator(current_node, 'left')
+    //$(next_node).addClass('visitedTargetNodePurple')
+    //ReachTopEdge()
+    //var moveArray=['down','left-step','up']
+    //var count = 0
     ReachTopEdge()
+    ReachRightEdge()
 
+    
+    while(TargetNode==''){
+    
+      if(obs){
+        break
+      }
+      ReachDownEdge()
+      step('left')
+      ReachTopEdge()
+      step('left')
+      
+      
+      
+    }
+
+      
+      
+
+    
+    
   }
 
   function IdGenerator(node, direction) {
@@ -72,23 +101,44 @@ $(document).ready(function() {
   }
   function ReachTopEdge() {
     var [next_node, y, x] = IdGenerator(current_node, 'no')
+    var obs =$(next_node).hasClass("endpoint")
     while (y > 1) {
+      if(obs){
+        alert(obs + "at " + next_node)
+        break;
+      }
       var [next_node, y, x] = IdGenerator(current_node, 'up')
+      var obs =$(next_node).hasClass("endpoint")
+
       animatePath(next_node, i)
-      console.log('Reaching Top')
+      //console.log('Reaching Top')
     }
   }
   function ReachRightEdge() {
     var [next_node, y, x] = IdGenerator(current_node, 'no')
+    var obs =$(next_node).hasClass("endpoint")
+    
     while (x < columns) {
+      if(obs){
+        alert(obs + "at " + next_node)
+        break;
+      }
       var [next_node, y, x] = IdGenerator(current_node, 'right')
+      var obs =$(next_node).hasClass("endpoint")
+    
       animatePath(next_node, i)
     }
   }
 
   function ReachDownEdge() {
     var [next_node, y, x] = IdGenerator(current_node, 'no')
+    var obs =$(next_node).hasClass("endpoint")
+    
     while (y < rows) {
+      var obs =$(next_node).hasClass("endpoint")
+      if(obs){
+              break;
+            }
       var [next_node, y, x] = IdGenerator(current_node, 'down')
       animatePath(next_node, i)
     }
@@ -105,10 +155,8 @@ $(document).ready(function() {
     var haswall = $(next_node).hasClass('wall')
     var hasStart = $(next_node).hasClass('startingpoint')
     var hasEnd = $(next_node).hasClass('endpoint')
-    var obstruction = false
-    if (haswall && hasStart && hasEnd) {
-      obstruction = true
-    }
+
+
     if (haswall) return true
     if (hasStart) return true
     if (hasEnd) {
@@ -116,6 +164,10 @@ $(document).ready(function() {
       return true
     }
     return false
+  }
+  function step(direction){
+    var [next_node, y, x] = IdGenerator(current_node, direction)
+    $(next_node).addClass('visitedTargetNodePurple')
   }
   function animatePath(next_node, i) {
     var obstruction = CheckforObstruction(next_node)

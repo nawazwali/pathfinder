@@ -7,7 +7,7 @@ $(document).ready(function() {
 
   var rows = Math.floor(height / p16) - 2
   var startingpoint = Math.floor(rows / 2) + '_' + Math.floor(columns * 0.1)
-  var endpoint = Math.floor(rows / 2) + '_' + Math.floor(columns * 0.9)
+  var endpoint = Math.floor(rows / 2) + '_' + Math.ceil(columns * 0.9)
 
   //alert(columns)
   for (i = 1; i <= rows; i++) {
